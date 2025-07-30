@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("../../snapcss/snap.css");
+
+* {
+  transition: all 0.2s ease;
+}
+
+:root {
+  --clr-parallax: #281733;
+  --clr-primary: #0a070d;
+  --clr-secondary: #21162b;
+  --clr-secondary-dark: oklch(from var(--clr-secondary) calc(l * 1.25) c h);
+  --clr-mudar: oklch(from var(--clr-secondary-dark) calc(l * 1.2) c h);
+  --clr-mudar-2: oklch(from var(--clr-mudar) calc(l * 1.1) c h);
+  --clr-accent: #9c60b6;
+  --clr-accent-hover: oklch(from var(--clr-accent) calc(l * 1.1) c h);
+  --clr-text: #efefef;
+  --clr-text-dark: oklch(from var(--clr-text) calc(l * 0.9) c h);
+}
+
+body {
+  font-family: "Familjen Grotesk", sans-serif;
+  overflow-x: hidden;
+  background-color: var(--clr-primary);
+}
+
+:focus-visible {
+  outline: var(--clr-accent) 2px dashed;
+  outline-offset: 2px;
+  transition: outline-offset 145ms cubic-bezier(0.25, 0, 0.4, 1);
+}
+
+.stars {
+  background-size: 128px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background-image: url("../images/star.png");
+  background-blend-mode: overlay;
+}
+
+/* ---------------------------------------------------------- */
+
+.lang1,
+.lang2 {
+  transform: scaleX(0);
+}
+.lang3 {
+  transform: scaleY(0);
+}
+
+.lang1-title,
+.lang2-title,
+.lang3-title {
+  opacity: 0;
+  transform: translateY(25%);
+}
+
+.lang1-icon,
+.lang2-icon,
+.lang3-icon {
+  scale: 0;
+}
+
+.langopen {
+  animation: lang1_2open 0.6s ease forwards;
+}
+.sobre:has(.langopen) .lang2 {
+  animation: lang1_2open 0.6s 0.6s ease forwards;
+}
+.sobre:has(.langopen) .lang3 {
+  animation: lang3open 0.6s 1.2s ease forwards;
+}
+
+.sobre:has(.langopen) .lang1-title {
+  animation: title 0.6s 0.6s ease forwards;
+}
+.sobre:has(.langopen) .lang2-title {
+  animation: title 0.6s 1.2s ease forwards;
+}
+.sobre:has(.langopen) .lang3-title {
+  animation: title 0.6s 1.8s ease forwards;
+}
+
+.sobre:has(.langopen) .icon1 {
+  animation: spring 600ms 1.2s ease-out forwards;
+}
+.sobre:has(.langopen) .icon2 {
+  animation: spring 600ms 1.4s ease-out forwards;
+}
+.sobre:has(.langopen) .icon3 {
+  animation: spring 600ms 1.6s ease-out forwards;
+}
+.sobre:has(.langopen) .icon4 {
+  animation: spring 600ms 1.8s ease-out forwards;
+}
+.sobre:has(.langopen) .icon5 {
+  animation: spring 600ms 2s ease-out forwards;
+}
+
+.sobre:has(.langopen) .icon6 {
+  animation: spring 600ms 1.8s ease-out forwards;
+}
+.sobre:has(.langopen) .icon7 {
+  animation: spring 600ms 2s ease-out forwards;
+}
+.sobre:has(.langopen) .icon8 {
+  animation: spring 600ms 2.2s ease-out forwards;
+}
+
+.sobre:has(.langopen) .icon9 {
+  animation: spring 600ms 2.4s ease-out forwards;
+}
+.sobre:has(.langopen) .icon10 {
+  animation: spring 600ms 2.6s ease-out forwards;
+}
+.sobre:has(.langopen) .icon11 {
+  animation: spring 600ms 2.8s ease-out forwards;
+}
+
+/* ------------------- animações ------------------- */
+
+@keyframes lang1_2open {
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes lang3open {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes title {
+  to {
+    opacity: 1;
+    transform: translateY(-25%);
+  }
+}
+
+@keyframes spring {
+  0% {
+    scale: 0;
+  }
+  60% {
+    scale: 1.1;
+  }
+  75% {
+    scale: 0.9;
+  }
+  85% {
+    scale: 1.05;
+  }
+  92% {
+    scale: 0.97;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes click {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -250px 0;
+  }
+}
+
+@keyframes dropdown {
+  to {
+    margin-top: 1rem;
+    opacity: 1;
+  }
+}
+
+@keyframes neon {
+  0%,
+  7% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  8% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 15px);
+  }
+  9%,
+  10% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  11% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 15px);
+  }
+  12% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  13% {
+    filter: brightness(20%);
+  }
+  14%,
+  20% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  21%,
+  22% {
+    filter: brightness(20%);
+  }
+  23%,
+  28%,
+  30%,
+  31% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  32% {
+    filter: brightness(20%);
+  }
+  33% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  34% {
+    filter: brightness(20%);
+  }
+  35%,
+  37%,
+  40% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  42% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 15px);
+  }
+  44% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  46% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 15px);
+  }
+  50% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  51%,
+  57% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  58% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 15px);
+  }
+  59%,
+  60% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  61% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 15px);
+  }
+  62% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  63% {
+    filter: brightness(20%);
+  }
+  64%,
+  70% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  71%,
+  72% {
+    filter: brightness(20%);
+  }
+  73%,
+  78%,
+  80%,
+  81% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  82% {
+    filter: brightness(20%);
+  }
+  83% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  84% {
+    filter: brightness(20%);
+  }
+  85%,
+  87%,
+  90% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  92% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 15px);
+  }
+  94% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+  96% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 15px);
+  }
+  100% {
+    filter: brightness(100%) drop-shadow(var(--clr-text) 0 0 20px);
+  }
+}

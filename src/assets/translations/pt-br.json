@@ -1,0 +1,13 @@
+{
+  "sobre": "Sobre",
+  "projetos": "Projetos",
+  "contato": "Contato",
+  "sobremim": "Sobre mim",
+  "sobretext": "Olá, sou Bruno, um desenvolvedor fullstack do Brasil, com especialidade em React e Node.",
+  "ferramentas": "Ferramentas",
+  "postgrestore": "PostgreStore é uma aplicação de e-commerce desenvolvida como projeto pessoal para praticar o desenvolvimento fullstack. Possui funcionalidades de cadastro, edição e exclusão de produtos, com uma interface responsiva e integrada a uma API REST.",
+  "dialecto": "Uma ferramenta de tradução leve para aplicações React, com suporte a variáveis, chaves aninhadas e análise de HTML.",
+  "portfolio": "Portfolio feito com um framework CSS que estou desenvolvendo e algumas bibliotecas de animações.",
+  "baixar": "Baixar currículo",
+  "inicio": "Início"
+}

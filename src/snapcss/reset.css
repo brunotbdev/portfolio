@@ -1,0 +1,108 @@
+/* situação border box */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* resetar e remover valores default */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0 solid;
+  outline-color: transparent;
+  font: inherit;
+  text-decoration: none;
+}
+
+/* tira os pontinho mas ainda deixa com funcionamento de lista */
+
+ul[role="list"],
+ol[role="list"],
+menu[role="list"] {
+  list-style: none;
+}
+
+/* deixa scroll smooth padrao */
+
+html,
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* a base sempre ocupar a tela toda */
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* prioriza velocidade de renderização nos textos */
+
+body {
+  text-rendering: optimizeSpeed;
+}
+
+/* configuraçao das imagens */
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+}
+
+/* titulos sempre ficarem bonitinhos */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* textos num tamanho legal e sem uma só palavra na ultima linha */
+
+p {
+  max-width: 75ch;
+  text-wrap: pretty;
+}
+
+/* aplicar bold */
+
+strong,
+b {
+  font-weight: bold;
+}
+
+/* aplicar italico */
+
+em,
+i {
+  font-style: italic;
+}
+
+/* desabilita coisas com movimento */
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
